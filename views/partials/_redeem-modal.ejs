@@ -1,0 +1,28 @@
+<div class="modal fade" id="redeemModal" tabindex="-1" aria-labelledby="redeemModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="redeemModalLabel">Redeem Gift Card</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Select quantity:</p>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="button" id="decreaseQty">-</button>
+                    </div>
+                    <input type="text" class="form-control" id="quantityInput" value="0" >
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="increaseQty">+</button>
+                    </div>
+                </div>
+                <p>Redeemable amount: <span id="redeemableAmount">0 Gwei</span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="redeemButton" disabled>Redeem</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="d-flex flex-column gap-4" style="padding: 0.5rem;">
+            <div class="d-flex flex-row align-items-center" style="gap:0.3rem; padding:0.3rem 0.8rem; border:2px solid purple; 
+            border-radius: 5px;">
+                <div style="color: purple;">
+                    <%- include('svg/_search.ejs') %>
+                </div>
+                <div class="w-100">
+                    <input id="gif-search-input" type="text" style="outline: none; padding: 0.5rem;" class="outline-none border-0 w-100 fs-5" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Search Gifs...">
+                </div>
+            </div>
+            <div id="gif-list" class="" style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 0.3rem; row-gap:0.5rem; height: 50vh; overflow: scroll;">
+               <template id="gif-card">
+                    <div class="gif-card">
+                        <img id="gif-img" style="width: 100%; aspect-ratio: 4/3;" src="" alt="">
+                    </div> 
+               </template>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div id="gift-cards-page" style="padding-inline: 5rem;">
+    <div class="container mt-5">
+        <div class="row" id="nftCards">
+        </div>
+    </div>
+    <template id="gift-card-elem">
+        <div class="col-4 mb-4 gx-5 gy-3">
+            <div class="card">
+                <img id="token-image" src="" class="card-img-top border-bottom" alt="" style="aspect-ratio: 4/4;">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <div class="d-flex gap-3" style="opacity: 0.9;">
+                            <span id="token-id" class="text-secondary"></span>
+                            <h5 id="token-name" class="card-title"></h5>
+                        </div>
+                        <span class="" style="font-size: 0.9rem;" id="token-balance"></span>
+                    </div>
+                    <p id="token-description" class="card-text" style="font-size: 0.9rem; padding-bottom: 1rem; padding-top:1rem; padding-left: 0.2rem;"></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button type="button" id="redeem-modal-btn" class="btn btn-primary w-50" data-bs-toggle="modal" data-bs-target="#redeemModal"> Redeem </button>
+                        <span id="token-value" style="font-size: 0.9rem;" class="card-text"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <%- include('_redeem-modal.ejs') %>
+</div>

@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #2C1338; padding-inline: 8rem; color: white !important; align-items: center;">
+    <a class="navbar-brand text-white" style="font-weight: 800; margin-right: 2rem; font-size: 1.5rem;" href="/">GiftShop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" style="align-items: center;" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active" style="margin-right:0.5rem ;">
+                <a class="nav-link text-white" id="home-page-link"  href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" id="gift-cards-page-link" href="#">Gift Cards</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+            <li class="connect-wallet-item" style="background-color: #883bae; border-radius: 6px;">
+                <button id='connectButton' class="btn connect-button text-white">Connect Wallet</button>
+            </li>
+            <li id="balance-item" style="border-radius: 6px; background:rgba(136, 59, 174, 0.24); padding-inline:1rem; display: flex; flex-direction: row; align-items: center; display: none;">
+                <%- include('svg/_wallet.ejs') %>
+                <a href="#" class="nav-item nav-link text-white" id='balance'></a>
+            </li>
+        </ul>
+    </div>
+</nav>

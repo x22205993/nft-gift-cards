@@ -1,0 +1,59 @@
+<div id="home-page">
+    <div class="mx-auto d-flex flex-column gap-4 align-items-center" style="width: 90%;">
+    <h1 style="width: 90%; font-size: 2.2rem; text-align: center;">Mint Gift Cards</h1>
+    <div class="d-flex flex-row" style="gap: 3rem; width: 90%;">
+        <div id="preview" class="card mb-3 preview" style="aspect-ratio: 4/3; width: 45%;" data-display="none">
+            <div id="previewContent" class="m-auto d-flex flex-column gap-1 align-items-center previewContent">
+                <%- include('svg/_upload.ejs') %>
+                <a id="browse-files-link" class="link " style="font-size: 0.8rem !important;text-decoration: none;
+                font-weight: bold; cursor: pointer;">Browse Files</a>
+                <span class="text-wrap text-secondary " style="font-size: 0.8rem"> Don't know what to upload?</span> 
+                <a id="open-gif-bar-btn" type="button"  class="btn btn-outline-primary" style="font-size: 0.8rem !important;text-decoration: none;
+                font-weight: bold;" data-bs-toggle="modal" data-bs-target="#exampleModal"> Upload GIF</a>
+            </div>
+            <div id="trash-icon-layer" class="trash-icon-layer">
+                <%- include('svg/_trash.ejs') %>
+            </div>
+            <input type="file" class="form-control-file" id="image" name="image" accept="image/*" hidden autocomplete="off">
+            <div id="image-field-validation-div" class="invalid-feedback" style="display: none;">
+            </div>
+        </div>
+        <div id="giftCardForm" class="d-flex flex-column gap-3" style="width: 45%;">
+            <div class="form-group">
+            </div>
+            <div class="form-group" style="margin-top: -1rem;">
+                <label for="name" class="fs-6" style="margin-bottom: 0.5rem;">Name</label>
+                <input type="text" class="form-control" id="name"  name="name"  style="padding: 0.5rem 1rem;" placeholder="Name" required autocomplete="off">
+                <div id="name-field-validation-div" class="invalid-feedback">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="message" class="fs-6" style="margin-bottom: 0.5rem;">Message</label>
+                <input type="text" class="form-control" id="message" name="message"  style="padding: 0.5rem 1rem;" placeholder="Message" autocomplete="off">
+                <div id="message-field-validation-div" class="invalid-feedback">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="quantity" class="fs-6" style="margin-bottom: 0.5rem;">Quantity</label>
+                <input type="text" class="form-control" id="quantity" name="quantity"  style="padding: 0.5rem 1rem;" placeholder="Quantity" autocomplete="off">
+                <div id="quantity-field-validation-div" class="invalid-feedback">
+                </div>
+            </div>
+            <div class="form-group" >
+                <label for="tokenAmount" class="fs-6" style="margin-bottom: 0.5rem;">Amount Per Gift Card (in Gwei)</label>
+                <input type="text" step="0.01" class="form-control" id="tokenAmount" name="tokenAmount"  style="padding: 0.5rem 1rem;" placeholder="Amount per Gift Card" autocomplete="off">
+                <span class="form-text" id="gweiToEthOutput"></span>
+                <div id="tokenAmount-field-validation-div" class="invalid-feedback">
+                </div>
+            </div>
+
+            <div class="form-group" style="display: none;">
+                <label for="senderAddress" class="fs-6" style="margin-bottom: 0.5rem;">Address</label>
+                <input type="text" class="form-control" id="senderAddress" name="senderAddress" placeholder="Recipient Address" autocomplete="off">
+            </div>
+
+            <button  id="giftCardSubmitBtn" class="btn btn-primary" style="margin-top: 1rem; padding-block: 0.5rem;" disabled>Get Gift Card</button>
+        </div>
+    </div>
+    </div>
+</div>
