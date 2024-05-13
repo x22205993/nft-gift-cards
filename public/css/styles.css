@@ -1,0 +1,70 @@
+:root {
+    --pseudo-display: none;
+  }
+
+
+.custom-card :hover {
+    background-color: gray;
+}
+
+.gif-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.gif-card::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    top:0;
+    left:0;
+}
+
+.gif-card:hover::after {
+    opacity: 0.2;
+    box-shadow: inset 0px -10px 10px 0px black;
+}
+
+.preview {
+    position: relative;
+}
+
+.previewContent {
+    display: none;
+}
+
+.trash-icon-layer {
+    display: none;
+    position: absolute;
+    top:0;
+    left:0;
+    background: black;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+}
+
+.trash-icon {
+    float: right;
+}
+
+.trash-icon-layer:hover {
+    opacity: 0.3;
+}
+
+.connect-button:hover {
+    background: rgba(136, 59, 174, 0.24);
+    background: #9f52c4 !important;
+    border: none !important;
+}
+.connect-button:active, .connect-button:active:focus {
+    box-shadow: 0 0 0 0.2rem #9f52c4;
+    background: #9f52c4 !important;
+    border: none !important;
+}
+.connect-button {
+    border: none !important;
+}
