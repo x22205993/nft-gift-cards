@@ -1,6 +1,7 @@
 import { WalletConnectError } from "./errors.js"
 import { messageModal } from "./message-modal.js"
 import { spinnerService } from "./spinner.js"
+
 function WalletService() {
     this.collectButton = document.getElementById('connectButton')
     this.walletAddress = ""
@@ -21,7 +22,6 @@ WalletService.prototype.connectWallet = async function () {
         throw new WalletConnectError("Ethereum Provider not found. Can't connect wallet")
     }
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-    // const accounts = await web3.eth.getAccounts();
     this.walletAddress = accounts[0]
     console.log(accounts[0])
     let balance = await web3.utils.fromWei(await web3.eth.getBalance(accounts[0]), "ether")

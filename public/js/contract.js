@@ -1,11 +1,3 @@
-// let contract = ""
-// async function connectContract() {
-//     contract = await new web3.eth.Contract(abi, contractAddress);
-//     await connectMetamask()
-// 	await getUserTokenBalances()
-// }
-// connectContract()
-
 import { walletService } from "./wallet.js";
 import { contractConfig } from "./contract-config.js";
 import { WalletConnectError } from "./errors.js";
