@@ -12,12 +12,12 @@ ContractHandler.prototype.connectContract = async function () {
 
 ContractHandler.prototype.mint = async function (quantity, tokenPriceInGWei, ipfsUri) {
 	console.log(this._getSenderAddress(), this.contract)
-	const resp =await this.contract.methods.mint(quantity, tokenPriceInGWei, ipfsUri)
+	const tokenPriceInWei = web3.utils.toWei(tokenPriceInGWei, 'gwei')
+	const resp = await this.contract.methods.mint(quantity, tokenPriceInWei, ipfsUri)
 	.send({
 		from: this._getSenderAddress(),
-		value: (quantity * (web3.utils.toWei(tokenPriceInGWei, 'gwei'))).toString()
+		value: (quantity * tokenPriceInWei).toString()
 	})
-	console.log(resp)
 }
 
 ContractHandler.prototype.balanceOfBatch = async function (tokenIds) {

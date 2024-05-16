@@ -22,7 +22,7 @@ UserTokensService.prototype.getUserTokens = async function () {
                 description: metadata.description,
                 quantity: tokenInfo.quantity,
                 balance: balance,
-                value: tokenInfo.value,
+                value: web3.utils.fromWei(tokenInfo.value, 'gwei'),
                 imageUrl: imageUrl
             });
         }
