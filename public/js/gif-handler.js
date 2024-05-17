@@ -5,6 +5,7 @@ export function createGifModal() {
     let gifCardTemplate = document.getElementById('gif-card')
     let gifList = document.getElementById('gif-list') 
     let myModal = new bootstrap.Modal('#exampleModal')
+    let modal = document.getElementById('exampleModal')
     let gifSearchInput = document.getElementById('gif-search-input')
 
     gifSearchInput.addEventListener('keypress', async (event) => {
@@ -17,6 +18,11 @@ export function createGifModal() {
     document.getElementById('open-gif-bar-btn').addEventListener('click', async () => {
         let gifs = await _getGifs()
         gifs.map(gif => _displayGif(gif))
+    })
+
+    modal.addEventListener('hide.bs.modal', event => {
+        gifSearchInput.value = ""
+        gifList.innerHTML = ""
     })
 
     async function _getGifs (searchTerm) {
